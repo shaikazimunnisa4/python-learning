@@ -1,1 +1,110 @@
+#code fo check number is positive or not
+
+num = int (input ("enter a number: "))
+if num>0:
+    print (num, " is a positive")
+if num<0:
+    print (num, " is negative")
+if num==0:
+       print (num, "is a zero")
+
+
+#eligible to vote
+
+age = int(input ("enter the age of person"))
+if age>=18:
+    print ("eligible to vote!")
+else:
+    print ("the person is underaged")
+
+
+#INPUT TYPE DETECTOR
+
+char = input ("press any key:")
+if char.isalpha():
+    print (char, "is a character")
+if char.isdigit():
+    print (char, " is a digit")
+if char.isspace():
+    print (char, "is a space")
+
+
+#check the num is even or odd
+
+num=int (input("enter a number"))
+if num%2==0:
+    print ("even")
+else:
+    print ("odd")
+
+
+#program to enter any char. If the entered char is in lowercase than convert the char into upper and viceversa
+
+ch=input()
+if ch>'A' and ch<='Z':
+    ch=ch.lower()
+    print ("Uppercae to lowercase is:"+ ch)
+else:
+    ch=ch.upper()
+    print ( "lowercase to uppercase is:"+ ch)
+
+
+
+# code for checking the interval at a given number
+
+
+num = int (input ("Enter the number: "))
+if num>=0 and num<10:
+    print(num, "is in 0-10 range")
+
+elif num>=11 and num<20:
+    print (num, "is in 11-20 range")
+
+elif num>=21 and num <=30:
+    print (num, "is in 21-30 range")
+else:
+    print ("out of range")
+
+
+
+
+#checking the number is 0 or positive or negative
+
+n=int(input("enter a num "))
+if n>0:
+    print ("positive")
+elif n<0:
+    print ("negative")
+else:
+    print ("zero")
+
+
+
+#PRINT THE WHOLE NUMBERS TILL N
+
+n=int (input ("enter the value of n:"))
+loop=0
+while loop <=n:
+    print (loop)
+    loop+=1
+
+
+#reverse loop
+
+num= int (input("enter the value of n"))
+while num>=0:
+    print(num, end=' ')
+    num-=1
+
+
+
+#print the even numbers till n
+
+
+n=int (input("Enter the value of n"))
+i=0
+while i<=n:
+    if i%2==0:
+        print(i, end=' ')
+    i+=1    
 
