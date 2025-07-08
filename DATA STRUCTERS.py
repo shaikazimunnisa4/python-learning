@@ -213,7 +213,7 @@ print(f"Element {target} found at index: {result}")"""
 
 
 
-#BUBBLE SORT:
+BUBBLE SORT:
 
 def bubble_sort(arr):
     n = len(arr)
@@ -231,7 +231,7 @@ bubble_sort(arr)
 print("BubbleSorted: ",arr)
 
 
-#COUNTING SORT:
+COUNTING SORT:
 
 def counting_sort(arr):
     if not arr:
