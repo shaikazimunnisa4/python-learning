@@ -211,3 +211,49 @@ target = 10
 result = fibsearch(arr, target)
 print(f"Element {target} found at index: {result}")"""
 
+
+
+#BUBBLE SORT:
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0,n-i-1):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1] = arr[j+1],arr[j]
+size = int(input())
+arr = []
+print("Enter the elements: ")
+for _ in range(size):
+    arr.append(int(input()))
+print("Original list: ",arr)
+bubble_sort(arr)
+print("BubbleSorted: ",arr)
+
+
+#COUNTING SORT:
+
+def counting_sort(arr):
+    if not arr:
+        return []
+    max_val = max(arr)
+    count = [0]*(max_val+1)
+    #freq
+    for num in arr:
+        count[num]+=1
+    #count
+    for i in range(1,len(count)):
+        count[i]+= count[i-1]
+    output = [0] * len(arr)
+    #stable sort
+    for num in reversed(arr):
+        output[count[num]-1] = num
+        count[num] -=1
+    #coping sorted list
+    for i in range(len(arr)):
+        arr[i] = output[i]
+arr = [4,2,2,8,9,3,2,1,6,5,3]
+print("Before Sorting: ",arr)
+counting_sort(arr)
+print("After Sorting: ",arr)"""
+
