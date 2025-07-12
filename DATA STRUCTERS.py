@@ -257,3 +257,54 @@ print("Before Sorting: ",arr)
 counting_sort(arr)
 print("After Sorting: ",arr)"""
 
+
+
+def count_sort(arr,exp):
+    n = len(arr)
+    output = [0]*n
+    count = [0] * 10 #for digits 0 to 9
+    for i in range(n): #frequencies of units position of numbers
+        index = (arr[i]//exp)%10
+        count[index]+=1
+    for i in range(1,10):
+        count[i]+=count[i-1]
+    i = n-1
+    while i>=0:
+        index = (arr[i]//exp)%10
+        output[count[index]-1] = arr[i]
+        count[index] -=1
+        i -=1
+    
+    for i in range(n):
+        arr[i] = output[i]
+def radix_sort(arr):
+    max_num = max(arr)
+    exp = 1
+    while max_num // exp>0:
+        count_sort(arr,exp)
+        exp *=10
+arr = [170,45,75,90,802,24,2,66]
+print("Before sort ",arr)
+radix_sort(arr)
+print("After sort",arr)
+
+
+#PANCAKE SORT:
+
+def flip(arr,k):
+    return arr[:k+1][::-1]+ arr[k+1:]
+def pancake(arr):
+    n = len(arr)
+    for size in range(n,1,-1):
+        max_index = arr.index(max(arr[:size]))
+        if max_index != size-1:
+            if max_index !=0:
+                arr = flip(arr,max_index)
+                print(f"Flip at {max_index+1}: {arr}")
+            arr = flip(arr,size-1)
+            print(f"Flip at {size}: {arr}")
+    return arr
+nums = list(map(int,input("enter").split()))
+sorted_nums = pancake(nums)
+print("Sorted",sorted_nums)"""
+
