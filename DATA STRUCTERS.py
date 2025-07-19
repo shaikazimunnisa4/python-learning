@@ -308,3 +308,31 @@ nums = list(map(int,input("enter").split()))
 sorted_nums = pancake(nums)
 print("Sorted",sorted_nums)"""
 
+
+
+
+
+
+#1.Exception - for base classes
+#2.ArithmeticError - math errors
+#3.ZeroDivisionError - arises when divided by Zero
+#4.StopIteration - next method or iterator not availaile / condition not available
+#5.SystemExit - current os exit
+#6.StandardError = pre defined keywords
+#7.EOFError = i/o till the endoffile
+#8.ImportError = file existing errors
+#9.KeyboardInterrupt = execution interrupt
+#10.NameError-
+#11.ValueError = 
+#12.IndexError = 
+#13.TypeError = 
+#14.IOError = 
+#15.SyntaxError = 
+#16.RuntimeError = 
+#17.IndentationError = 
+#18.AttributeError = 
+#19.AssertionError =  
+
+
+
+"""
