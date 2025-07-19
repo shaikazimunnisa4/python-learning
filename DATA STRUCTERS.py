@@ -255,7 +255,7 @@ def counting_sort(arr):
 arr = [4,2,2,8,9,3,2,1,6,5,3]
 print("Before Sorting: ",arr)
 counting_sort(arr)
-print("After Sorting: ",arr)"""
+print("After Sorting: ",arr)
 
 
 
