@@ -940,7 +940,7 @@ class node:
         self.prev=None
 
 
-
+1.INSERTION :
 #at the end insertion at DLL:
 
 class Node:
@@ -1073,6 +1073,129 @@ for i in range(n):
     pos=int(input(f"enter the position to insert {val}:"))
     dll.iap(pos,val)  
 dll.display()
+
+
+
+2.DELETION:
+
+1.delete at begin/insert at begin
+2.delete at begin/insert at end
+
+
+
+#deleteion at begin in double linked list
+
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.prev=None
+        self.next=None
+class DoubleLinkedList:
+    def __init__(self):
+        self.head=None
+    def iae(self,data):
+        newnode=Node(data)
+        if not self.head:
+            self.head=newnode
+            return
+        temp=self.head
+        while temp.next:
+            temp=temp.next
+        temp.next=newnode
+        newnode.prev=temp
+    def dab(self):
+        if not self.head:
+            print("can't perform delete in an empty list...")
+        print(f"deleted: {self.head.data}")
+        self.head=self.head.next
+        if self.head:
+            self.head.prev=None
+    def display(self):
+        temp=self.head
+        print("double linked list")
+        while temp:
+            print(temp.data,end="<->")
+            temp=temp.next
+        print("None")
+dll=DoubleLinkedList()
+n=int(input("enter a number of elements to insert at end:"))
+for i in range(n):
+    val=int(input(f"enter element {i+1}:"))
+    dll.iae(val)
+dll.display() 
+d=int(input("/n hoe many times you want to perform delete op:"))
+for _ in range(d):
+    dll.dab()
+    dll.display()
+
+
+
+
+#delete by value in double linked list:
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+class DoubleLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def iae(self, data): 
+        newnode = Node(data)
+        if not self.head:
+            self.head = newnode
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = newnode
+        newnode.prev = temp
+    def dbv(self, value):
+        if not self.head:
+            print("Cannot perform delete in an empty list...")
+            return
+        temp = self.head
+        if temp.data == value:
+            print(f"Deleted: {temp.data}")
+            self.head = temp.next
+            if self.head:
+                self.head.prev = None
+            return
+        while temp and temp.data != value:
+            temp = temp.next
+        if not temp:
+            print(f"Value {value} not found in the list.")
+            return
+        if temp.next:
+            temp.next.prev = temp.prev
+        if temp.prev:
+            temp.prev.next = temp.next
+        print(f"Deleted: {temp.data}")
+    def display(self):
+        temp = self.head
+        print("Double Linked List:")
+        while temp:
+            print(temp.data, end="<->")
+            temp = temp.next
+        print("None")
+dll = DoubleLinkedList()
+n = int(input("Enter number of elements to insert at end: "))
+for i in range(n):
+    val = int(input(f"Enter element {i+1}: "))
+    dll.iae(val)
+dll.display()
+d = int(input("\nHow many times you want to perform delete operation (by value)? "))
+for _ in range(d):
+    value = int(input("Enter value to delete: "))
+    dll.dbv(value)
+    dll.display()
+
+
+
+
 
 
 
