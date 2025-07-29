@@ -1196,6 +1196,76 @@ for _ in range(d):
 
 
 
+'''CODE to check dupilcate in double linked list and print the count of frequency
+input=6
+10
+20
+30
+20
+10
+40
+output:
+10<-->20<-->30<-->20<-->10<-->40
+duplicate values in dll:
+10 appears 2 times
+20 appears 2 times'''
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+class DoubleLinkedList:
+    def __init__(self):
+        self.head = None
+    def iae(self, data):  
+        newnode = Node(data)
+        if self.head is None:
+            self.head = newnode
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = newnode
+        newnode.prev = temp
+    def display(self):
+        temp = self.head
+        print("Double Linked List:")
+        while temp:
+            print(temp.data, end="<-->")
+            temp = temp.next
+        print("None")
+    def fdv(self):
+        freq = {}
+        temp = self.head
+        while temp:
+            if temp.data in freq:
+                freq[temp.data] += 1
+            else:
+                freq[temp.data] = 1
+            temp = temp.next
+        has_duplicates = False
+        print("Duplicate values in DLL:")
+        for key, value in freq.items():
+            if value > 1:
+                print(f"{key} appears {value} times")
+                has_duplicates = True
+        if not has_duplicates:
+            print("No duplicate values found.")
+dll = DoubleLinkedList()
+n = int(input("Enter number of elements: "))
+for i in range(n):
+    val = int(input(f"Enter element {i+1}: "))
+    dll.iae(val)
+
+dll.display()
+dll.fdv()
+
+
+
+
+
 
 
 
