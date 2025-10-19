@@ -1,2 +1,2 @@
 # python-learning
-i am posting the learning stuff of the python
+i am posting the learning of the python basics
